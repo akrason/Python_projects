@@ -1,7 +1,11 @@
 class CoffeeMachine(object):
+
     def __init__(self, res):
+        # names of products
         self.name = ["water", "milk", "coffee beans", "disposable cups", "money"]
+        # how many resources machine has
         self.res = res
+        # cost of individual types of coffee
         self.espresso = [250, 0, 16, 1, -4]
         self.latte = [350, 75, 20, 1, -7]
         self.cappuccino = [200, 100, 12, 1, -6]
@@ -54,6 +58,7 @@ class CoffeeMachine(object):
         for i in range(len(self.res)):
             print(str(self.res[i]), "of", self.name[i])
 
+    # adding resources to coffee machine
     def fill(self):
         plus = [0, 0, 0, 0]
         plus[0] = int(input("Write how many ml of water do you want to add:"))
@@ -64,6 +69,7 @@ class CoffeeMachine(object):
         for i in range(len(plus)):
             self.res[i] += plus[i]
 
+    # taking money from coffee machine
     def take(self):
         print("I gave you $", self.res[4])
         self.res[4] = 0
